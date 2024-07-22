@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 
-export default function NameForm() {
+export default function Intention() {
   const router = useRouter();
 
   return (
