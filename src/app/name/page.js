@@ -1,5 +1,5 @@
 "use client";
-import Form from "../_components/Form";
+import Form from "../_components/NameForm";
 
 export default function Name() {
   return (
