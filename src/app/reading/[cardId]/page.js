@@ -1,11 +1,11 @@
 "use client";
 import { useRouter, useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import Image from "next/image";
-import Button from "../../_components/Button";
-import Message from "../../_components/Message";
+import { useUser } from "../../context/UserContext";
+import Tarot from "../../_components/Tarot";
 
 export default function Reading() {
+  let { name, setName } = useUser();
   let [quote, setQuote] = useState(null);
   let [author, setAuthor] = useState(null);
   let [gifProps, setGifProps] = useState(null);
@@ -35,26 +35,18 @@ export default function Reading() {
       }
     }
 
-    if (cardId) {
+    if (name && cardId) {
       fetchGifAndQuote();
     }
-  }, [cardId]);
+  }, [name, cardId]);
 
   return (
     <>
-      <Message />
-      {gifProps && (
-        <Image
-          src={gifProps.url}
-          width={gifProps.width}
-          height={gifProps.height}
-          alt="random gif"
-        />
+      {name ? (
+        <Tarot gifProps={gifProps} quote={quote} author={author} />
+      ) : (
+        <p>Who are you?</p>
       )}
-      <p>
-        {quote} -- {author}
-      </p>
-      <Button label="Reshuffle" routeName="/intention" />
       <div
         onClick={() => {
           router.push("/");
