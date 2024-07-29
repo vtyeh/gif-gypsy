@@ -22,8 +22,13 @@ export default function IntentionForm() {
 
   return (
     <form onSubmit={handleClick}>
-      <input type="text" placeholder="Intention" />
-      <button type="submit">I&apos;m ready!</button>
+      <input
+        className="input-box"
+        type="text"
+        placeholder="Ex: What's my spirit animal for dealing with awkward situations?"
+        style={{ fontSize: "1em" }}
+      />
+      <button type="submit">I&apos;M READY!</button>
       <p>{error}</p>
     </form>
   );

@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "BlackMango";
+  src: url("/fonts/BlackMango-Regular.ttf") format("truetype"),
+    url("/fonts/BlackMango-Regular.otf") format("opentype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "BlackMango";
+  src: url("/fonts/BlackMango-Bold.ttf") format("truetype"),
+    url("/fonts/BlackMango-Bold.otf") format("opentype");
+  font-weight: bold;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -8,4 +22,49 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  /* background-image: url("/images/4965007.jpg"); */
+  background-color: #f0b095;
+}
+
+.center-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+h1 {
+  font-family: "BlackMango", sans-serif;
+  font-weight: normal;
+  margin-bottom: 1em;
+}
+
+.title {
+  font-family: "BlackMango", sans-serif;
+  font-weight: bold;
+}
+
+button {
+  width: 200px;
+  padding: 0.5em;
+  background-color: transparent;
+  border: 1px solid;
+  border-radius: 15px;
+  margin: 4em;
+}
+
+button:hover {
+  background-color: #eddfd9;
+}
+
+.input-box {
+  height: 100px;
+  width: 400px;
+  padding: 0.5em;
+  background-color: transparent;
+  border: 1px solid;
+  border-radius: 5px;
+  text-align: center;
 }

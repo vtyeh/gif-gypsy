@@ -6,8 +6,10 @@ export default function Home() {
 
   return (
     <main>
-      <div>
-        <h1>Welcome to the Gif Gypsy</h1>
+      <div className="center-screen">
+        <h1 className="title">
+          Welcome to the <span style={{ color: "white" }}>Gif Gypsy</span>
+        </h1>
         <button
           onClick={() => {
             router.push("/name");

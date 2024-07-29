@@ -41,7 +41,7 @@ export default function Reading() {
   }, [name, cardId]);
 
   return (
-    <>
+    <div className="center-screen">
       {name ? (
         <Tarot gifProps={gifProps} quote={quote} author={author} />
       ) : (
@@ -54,6 +54,6 @@ export default function Reading() {
       >
         home
       </div>
-    </>
+    </div>
   );
 }

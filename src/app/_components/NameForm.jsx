@@ -22,8 +22,9 @@ export default function NameForm() {
 
   return (
     <form onSubmit={handleClick}>
-      <input type="text" placeholder="Name" />
-      <button type="submit">Submit</button>
+      <input className="input-box" type="text" style={{ fontSize: "1.5em" }} />
+      <br />
+      <button type="submit">SUBMIT</button>
       <p>{error}</p>
     </form>
   );
