@@ -9,7 +9,11 @@ export default function Message() {
   return (
     <>
       <h1>{name}, get ready to boogie with your newfound wisdom!</h1>
-      <p>You asked the energy of the wise Gifs: {intention}</p>
+      <h2>
+        You asked the energy of the wise Gifs:
+        <br />
+        {intention}
+      </h2>
     </>
   );
 }

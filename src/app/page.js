@@ -8,7 +8,9 @@ export default function Home() {
     <main>
       <div className="center-screen">
         <h1 className="title">
-          Welcome to the <span style={{ color: "white" }}>Gif Gypsy</span>
+          Welcome to
+          <br />
+          the <span style={{ color: "white" }}>Gif Gypsy</span>
         </h1>
         <button
           onClick={() => {

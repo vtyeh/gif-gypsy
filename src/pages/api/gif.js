@@ -14,6 +14,7 @@ export default async function handler(req, res) {
     "math lady",
     "cat",
     "bob's burgers",
+    "schitts creek",
   ];
   const randomQuery = getRandomString(searchQueries);
 

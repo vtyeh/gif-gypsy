@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useUser } from "../context/UserContext";
+import Image from "next/image";
 
 export default function NameForm() {
   const { setName } = useUser();
@@ -24,7 +25,9 @@ export default function NameForm() {
     <form onSubmit={handleClick}>
       <input className="input-box" type="text" style={{ fontSize: "1.5em" }} />
       <br />
-      <button type="submit">SUBMIT</button>
+      <button type="submit" className="round-button">
+        <Image src="/images/check.png" width={20} height={20} alt="check" />
+      </button>
       <p>{error}</p>
     </form>
   );
