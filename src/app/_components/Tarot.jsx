@@ -6,17 +6,20 @@ export default function Tarot({ gifProps, quote, author }) {
   return (
     <>
       <Message />
-      {gifProps && (
-        <Image
-          src={gifProps.url}
-          width={gifProps.width}
-          height={gifProps.height}
-          alt="random gif"
-        />
-      )}
-      <p>
-        {quote} -- {author}
-      </p>
+      <div id="tarot">
+        {gifProps && (
+          <Image
+            src={gifProps.url}
+            width={gifProps.width}
+            height={gifProps.height}
+            alt="random gif"
+          />
+        )}
+        <p id="quote">
+          {quote}
+          <br />- {author}
+        </p>
+      </div>
       <Button label="Reshuffle" routeName="/intention" />
     </>
   );

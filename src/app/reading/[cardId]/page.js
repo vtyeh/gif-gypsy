@@ -12,6 +12,15 @@ export default function Reading() {
   let { cardId } = useParams();
   const router = useRouter();
 
+  function resizeImage(height, width) {
+    if (width > 400) {
+      const aspectRatio = height / width;
+      width = 400;
+      height = width * aspectRatio;
+    }
+    return { height, width };
+  }
+
   useEffect(() => {
     async function fetchGifAndQuote() {
       try {
@@ -25,10 +34,13 @@ export default function Reading() {
         const randomIndex = Math.floor(Math.random() * 10); // multiplier should equal whatever the limit is in api/gif query
         const originalGif = gifData.data.data[randomIndex].images.original;
 
+        const imgDimension = resizeImage(originalGif.height, originalGif.width);
+        console.log({ imgDimension });
+
         setGifProps({
           url: originalGif.url,
-          height: originalGif.height,
-          width: originalGif.width,
+          height: imgDimension.height,
+          width: imgDimension.width,
         });
       } catch (error) {
         console.error("Error fetching data", error);

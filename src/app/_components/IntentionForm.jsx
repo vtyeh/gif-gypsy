@@ -25,7 +25,7 @@ export default function IntentionForm() {
       <input
         className="input-box"
         type="text"
-        placeholder="Ex: What's my spirit animal for dealing with awkward situations?"
+        placeholder="Ex: How can I take life less seriously?"
         style={{ fontSize: "1em" }}
       />
       <button type="submit">I&apos;M READY!</button>

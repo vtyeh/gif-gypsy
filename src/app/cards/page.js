@@ -11,9 +11,11 @@ export default function Cards() {
       {
         <div className="center-screen">
           <h1>Pick a card</h1>
-          <Card id="1" />
-          <Card id="2" />
-          <Card id="3" />
+          <div className="row">
+            <Card id="1" />
+            <Card id="2" />
+            <Card id="3" />
+          </div>
         </div>
       }
     </div>

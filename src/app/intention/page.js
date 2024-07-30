@@ -8,7 +8,10 @@ export default function Intention() {
 
   return (
     <div className="center-screen">
-      <h1>Take a moment to set your intention</h1>
+      <h1>
+        Take a moment to set your{" "}
+        <span style={{ color: "white" }}>intention</span>
+      </h1>
       <IntentionForm />
     </div>
   );

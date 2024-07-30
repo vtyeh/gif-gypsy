@@ -4,7 +4,7 @@ export default function Card({ id }) {
   const router = useRouter();
   return (
     <div className="card" onClick={() => router.push(`/reading/${id}`)}>
-      Card
+      <div className="inner-border"></div>
     </div>
   );
 }
