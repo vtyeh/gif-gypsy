@@ -3,17 +3,17 @@ import { useRouter } from "next/navigation";
 import { useUser } from "../context/UserContext";
 
 export default function Message() {
-  let { name, intention } = useUser();
+  const { name, intention } = useUser();
   const router = useRouter();
+
+  const clean_intention = intention[0].toUpperCase() + intention.slice(1);
 
   return (
     <>
-      <h1>{name}, get ready to boogie with your newfound wisdom!</h1>
-      <h2>
-        You asked the energy of the wise Gifs:
-        <br />
-        {intention}
-      </h2>
+      <h1 style={{ margin: "1em" }}>
+        {name}, you asked the energy of the wise Gifs:
+      </h1>
+      <h2>{clean_intention}</h2>
     </>
   );
 }

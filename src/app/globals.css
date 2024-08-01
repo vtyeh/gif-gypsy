@@ -14,6 +14,18 @@
   font-weight: bold;
 }
 
+:root {
+  --gradient: linear-gradient(
+    45deg,
+    #ff7307,
+    #fd77af,
+    #ea7986,
+    #e5cbc1,
+    #da84cd,
+    #d9d9d9
+  );
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -26,7 +38,22 @@ body {
   overflow-x: hidden;
   background-color: #f0b095;
   font-family: Poppins, sans-serif;
-  padding: 1em;
+  background-size: 400%;
+  background-image: radial-gradient(circle at 20% 20%, #f0b095, transparent 50%),
+    radial-gradient(circle at 80% 40%, #fd77af, transparent 50%),
+    radial-gradient(circle at 30% 70%, #e5cbc1, transparent 50%),
+    radial-gradient(circle at 60% 90%, #d9d9d9, transparent 50%);
+  background-size: 200% 200%;
+  animation: bg-animation 5s infinite alternate;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
 }
 
 .center-screen {
@@ -38,9 +65,18 @@ body {
   min-height: 100vh;
 }
 
+#welcome {
+  display: flex;
+}
+
+#right-sparkle {
+  margin-top: 8em;
+}
+
 h1 {
   font-family: "BlackMango", sans-serif;
   font-weight: normal;
+  margin-top: 1em;
   margin-bottom: 1em;
 }
 
@@ -158,7 +194,7 @@ button:hover {
 
 .back {
   background-color: #92d4c7;
-  background-image: url("/images/tarot.svg");
+  background-image: url("/images/tarot-big.svg");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -168,4 +204,50 @@ button:hover {
   width: 345px;
   height: 510px;
   border-radius: 10px;
+}
+
+#cards-page {
+  background-image: linear-gradient(#d4cfff, #ebebeb);
+}
+
+#reading-page {
+  background-image: linear-gradient(#ffc7d9, #ebebeb);
+}
+
+#intention-page {
+  background-color: #f0b095;
+}
+
+.logo {
+  position: fixed;
+  left: 2em;
+  top: 1em;
+  width: 100%;
+  background: none;
+  color: white;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 1em;
+  width: 100%;
+  background: none;
+  color: white;
+  text-align: center;
+}
+
+@media screen and (max-width: 450px) {
+  .tarot {
+    width: 85%;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
 }

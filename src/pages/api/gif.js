@@ -11,10 +11,10 @@ export default async function handler(req, res) {
     "spongebob",
     "family guy",
     "disney",
-    "math lady",
+    "schitts creek",
     "cat",
     "bob's burgers",
-    "schitts creek",
+    "math lady",
   ];
   const randomQuery = getRandomString(searchQueries);
 

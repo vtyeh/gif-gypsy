@@ -17,9 +17,9 @@ export default function Tarot() {
   const [gifProps, setGifProps] = useState(null);
 
   function resizeImage(height, width) {
-    if (width > 355) {
+    if (width > 300) {
       const aspectRatio = height / width;
-      width = 355;
+      width = 300;
       height = width * aspectRatio;
     }
     return { height, width };
