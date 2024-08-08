@@ -22,7 +22,10 @@ export default function NameForm() {
   };
 
   return (
-    <form onSubmit={handleClick}>
+    <form
+      onSubmit={handleClick}
+      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+    >
       <input className="input-box" type="text" style={{ fontSize: "1.5em" }} />
       <br />
       <button type="submit" className="round-button">

@@ -10,7 +10,7 @@ export default function Name() {
       <Header />
       <div className="center-screen">
         <Image src="/images/moon.svg" width={35} height={35} alt="check" />
-        <h1>Enter your name:</h1>
+        <h1>What is your name?</h1>
         <NameForm />
       </div>
       <Footer />

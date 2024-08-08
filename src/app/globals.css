@@ -96,7 +96,7 @@ button {
   background-color: transparent;
   border: 1px solid;
   border-radius: 25px;
-  margin: 3em;
+  margin: 2em;
 }
 
 button:hover {
@@ -122,7 +122,7 @@ button:hover {
   width: 250px;
   height: 350px;
   border-radius: 15px;
-  background-color: #92d4c7;
+  background-color: #c0a4da;
   background-image: url("/images/tarot.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -169,31 +169,31 @@ button:hover {
   margin-bottom: 2em;
 }
 
-.round-button {
-  width: 50px;
-  height: 50px;
-  padding-top: 12px;
-  padding-left: 10px;
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 1em;
 }
 
-.home-button {
+.round-button {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   border: 1px solid;
   border-radius: 25px;
   width: 50px;
   height: 50px;
+  margin: 0.5em;
 }
 
-.home-button:hover {
+.round-button:hover {
   background-color: white;
   cursor: pointer;
 }
 
 .back {
-  background-color: #92d4c7;
+  background-color: #c0a4da;
   background-image: url("/images/tarot-big.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -218,7 +218,8 @@ button:hover {
   background-color: #f0b095;
 }
 
-.logo {
+.navbar {
+  font-family: Poppins, sans-serif;
   position: fixed;
   left: 2em;
   top: 1em;
@@ -227,11 +228,12 @@ button:hover {
   color: white;
 }
 
-.logo:hover {
+.navbar span:hover {
   cursor: pointer;
 }
 
 footer {
+  font-family: Poppins, sans-serif;
   position: fixed;
   left: 0;
   bottom: 1em;

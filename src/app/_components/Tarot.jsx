@@ -86,7 +86,6 @@ export default function Tarot() {
           </p>
         </div>
       </ReactCardFlip>
-      <Button label="Reshuffle" routeName="/intention" />
     </>
   );
 }
