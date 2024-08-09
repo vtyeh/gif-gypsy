@@ -232,6 +232,11 @@ button:hover {
   cursor: pointer;
 }
 
+#logo {
+  font-family: "BlackMango", sans-serif;
+  margin-top: 2em;
+}
+
 footer {
   font-family: Poppins, sans-serif;
   position: fixed;

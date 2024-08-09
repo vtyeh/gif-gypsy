@@ -1,10 +1,12 @@
-import { useRouter, useParams } from "next/navigation";
-import { useState, useEffect } from "react";
-import Button from "./Button";
+import { useParams } from "next/navigation";
 import Image from "next/image";
-import Message from "./Message";
+import { useState, useEffect, useRef } from "react";
 import ReactCardFlip from "react-card-flip";
+import html2canvas from "html2canvas";
+
 import { useUser } from "../context/UserContext";
+import RoundButton from "./RoundButton";
+import Message from "./Message";
 
 export default function Tarot() {
   const { name } = useUser();
@@ -15,6 +17,8 @@ export default function Tarot() {
   const [quote, setQuote] = useState(null);
   const [author, setAuthor] = useState(null);
   const [gifProps, setGifProps] = useState(null);
+
+  const tarotRef = useRef(null);
 
   function resizeImage(height, width) {
     if (width > 300) {
@@ -64,6 +68,20 @@ export default function Tarot() {
     }
   }, [gifProps]);
 
+  function download() {
+    console.log("download tarot");
+    // TODO: fix the gif size. it's too large
+    if (tarotRef.current) {
+      html2canvas(tarotRef.current).then((canvas) => {
+        const image = canvas.toDataURL("image/png");
+        const link = document.createElement("a");
+        link.href = image;
+        link.download = "your-tarot.png";
+        link.click();
+      });
+    }
+  }
+
   return (
     <>
       <Message />
@@ -71,7 +89,7 @@ export default function Tarot() {
         <div className="tarot back">
           <div className="tarot-inner-border"></div>
         </div>
-        <div className="tarot front">
+        <div ref={tarotRef} className="tarot front">
           {gifProps && (
             <Image
               src={gifProps.url}
@@ -84,8 +102,21 @@ export default function Tarot() {
             {quote}
             <br />- {author}
           </p>
+          <p id="logo">The Gif Gypsy</p>
         </div>
       </ReactCardFlip>
+      <div className="buttons">
+        <RoundButton route="/intention" name="intention" />
+        <RoundButton route="/" name="home" />
+        <div className="round-button" onClick={download}>
+          <Image
+            src="/images/save.svg"
+            width={25}
+            height={25}
+            alt={"download button"}
+          />
+        </div>
+      </div>
     </>
   );
 }
